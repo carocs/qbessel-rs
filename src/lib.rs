@@ -32,7 +32,11 @@
 
 pub mod core;
 pub mod error;
+pub mod quantum;
 
 // Re-export core functions for convenience
 pub use core::*;
 pub use error::{BesselError, BesselResult};
+
+// Re-export quantum modules for convenience
+pub use quantum::{qkd, lattice};
