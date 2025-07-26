@@ -1,0 +1,25 @@
+[package]
+name = "qbessel-rs"
+version = "0.1.0"
+edition = "2021"
+authors = ["Your Name <your.email@example.com>"]
+description = "High-performance Rust library for Bessel/Neumann functions with quantum cryptography applications"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/yourusername/qbessel-rs"
+keywords = ["bessel", "quantum", "cryptography", "mathematics", "no-std"]
+categories = ["science", "cryptography", "mathematics", "no-std"]
+
+[features]
+default = ["std"]
+std = []                           # Standard OS support
+no-std = ["libm"]                  # Embedded targets
+
+[dependencies]
+libm = { version = "0.2", optional = true }         # no_std math
+
+[dev-dependencies]
+approx = "0.5"                     # Floating point comparisons
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
